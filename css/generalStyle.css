@@ -3,11 +3,8 @@ h1, h2, p , a {
     font-family: "Roboto Condensed", sans-serif;
 }
 
-.btn_comprar {
-    margin-top: 40px;
-}
 
-.btn_comprar  a {
+.btn_primary a {
     color: blueviolet;
     padding: 10px;
     background-color: white;
@@ -17,7 +14,7 @@ h1, h2, p , a {
     border-radius: 40px;
 }
 
-.btn_comprar  a:hover {
+.btn_primary a:hover {
     color: white;
     background-color: rgb(99, 8, 185);
     transition: background-color 0.8s ease;

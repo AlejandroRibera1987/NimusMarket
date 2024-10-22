@@ -46,13 +46,66 @@
                     <p>Oferta de la Semana</p>
                     <h2>MONEDA DE CROACIA - 1 KUNA</h2>
                     <p>Año 2003 Ruiseñor</p>
-                    <div class="btn_comprar">
+                    <div class="btn_primary">
                         <a href="">Comprar Ahora</a>
                     </div>
                 </div>
                 <div class="img_oferta">
                     <figure>
-                        <img src="" alt="Foto de la Oferta">
+                        <img src="/Primer_parcial/img/Moneda_index.jpg" alt="Foto de la Oferta">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="mas_vendidos">
+            <div class="titulo_vendidos">
+                <h2>MAS VENDIDOS</h2>
+                <div class="btn_primary">
+                    <a href="">Ver todo</a>
+                </div>
+            </div>
+
+            <div class="card_vendidos">
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
+                    </figure>
+                </div>
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
+                    </figure>
+                </div>
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
+                    </figure>
+                </div>
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
+                    </figure>
+                </div>
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
+                    </figure>
+                </div>
+                <div class="cards_productos">
+                    <figure>
+                        <img src="" alt="Producto mas vendido">
+                        <p>Moneda Austriaca 1817</p>
+                        <p>$5,562</p>
                     </figure>
                 </div>
             </div>

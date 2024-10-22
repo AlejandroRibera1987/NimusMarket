@@ -80,8 +80,9 @@ header {
 }
 
 .oferta_index {
-    margin: 100px 150px;
+    margin: 100px 100px;
     width: 30%;
+    height: 320px;
     padding: 40px;
     padding-right: 100px;
     border-radius: 20px;
@@ -96,4 +97,57 @@ header {
 
 .oferta_index h2 {
     font-size: 3.2em;
+}
+
+.oferta_index .btn_primary{
+    margin-top: 40px;
+}
+
+.img_oferta {
+    width: 30%;
+    margin: 100px auto;
+}
+
+.img_oferta img {
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 4px 3px 15px black;
+    height: 600px;
+    position: relative;
+}
+
+/*Mas Vendidos Index*/
+
+.mas_vendidos {
+    background-color: black;
+}
+
+.titulo_vendidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 100px 0px;
+}
+
+.titulo_vendidos h2 {
+    font-size: 3em;
+}
+
+.titulo_vendidos .btn_primary a {
+    padding: 10px 35px;
+}
+
+.card_vendidos {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.cards_productos {
+    background-color: red;
+    height: 100px;
+    margin: 5px;
+    flex: 0 0 calc(25% - 10px);
 }
