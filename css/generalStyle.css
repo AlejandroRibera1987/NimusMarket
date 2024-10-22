@@ -1,0 +1,24 @@
+h1, h2, p , a {
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.btn_comprar {
+    margin-top: 40px;
+}
+
+.btn_comprar  a {
+    color: blueviolet;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 40px;
+}
+
+.btn_comprar  a:hover {
+    color: white;
+    background-color: rgb(99, 8, 185);
+    transition: background-color 0.8s ease;
+}
