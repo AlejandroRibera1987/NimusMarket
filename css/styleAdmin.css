@@ -88,7 +88,8 @@
 .agregar_producto form input {
     border-radius: 20px;
     height: 30px;
-    width: 300px;
+    width: 200px;
+    padding: 0px 15px;
 }
 
 .form_1 {
@@ -97,10 +98,20 @@
     justify-content: space-evenly;
 }
 
-.nombre_form, .pais_form, .categoria_form, .descripcion_form, .img_form, .stock_form {
+.nombre_form, 
+.pais_form, 
+.categoria_form, 
+.descripcion_form, 
+.img_form, 
+.stock_form, 
+.precio_form {
     display: flex;
     flex-direction: column;
     margin: 20px;
+}
+
+.precio_form {
+    align-items: center ;
 }
 
 .categoria_form select {
@@ -114,9 +125,7 @@
     height: 100px;
     margin: auto;
     border-radius: 20px;
-}
-
-.agregar_producto form .btn_form {
+    padding: 15px 15px;
 }
 
 .agregar_producto form .btn_form input {

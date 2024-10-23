@@ -10,8 +10,6 @@ if($conection != NULL) {
     $descripcion;
     $stock;
     $precio;
-  
-
 
 
     if(isset($_GET['nombre']) || isset($_GET['pais']) || isset($_GET['categoria']) || isset($_GET['descripcion']) || isset($_GET['stock']) || isset($_GET['precio'])){
@@ -34,7 +32,7 @@ if($conection != NULL) {
 
         //Guardo los datos
 
-        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`, `img_producto`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock')";
+        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock')";
 
         //Ejecutamos la Consulta
 
@@ -60,16 +58,23 @@ if($conection != NULL) {
                 </div>
                     <div class="categoria_form">
                         <label for="categoria">Categoria</label>
+
                         <select name="categoria" id="categoria">
-                            <option value="">Eliga Categoria</option>
-                            <option value="oro">Oro</option>
-                            <option value="plata">Plata</option>
-                            <option value="bronce">Bronce</option>
+                        <?php 
+                            $consulta_categoria = mysqli_query($conection,"SELECT * FROM categorias");
+                            while($seccion = mysqli_fetch_array($consulta_categoria)){
+                        ?>
+                            <option value="<?php echo $seccion['id_categoria'];?>"><?php echo $seccion['nombre_categoria'];?></option>
+                        <?php } ?>        
                         </select>
                     </div>
                     <div class="descripcion_form">
                         <label for="descripcion">Descripcion</label>
                         <textarea name="descripcion" id="descripcion"></textarea>
+                    </div>
+                    <div class="precio_form">
+                        <label for="precio">Precio</label>
+                        <input type="number" id="precio" name="precio">
                     </div>
                 <div class="form_1">
                     <div class="img_form">
@@ -79,10 +84,6 @@ if($conection != NULL) {
                     <div class="stock_form">
                         <label for="stock">Inventario</label>
                         <input type="number" id="stock" name="stock">
-                    </div>
-                    <div class="precio_form">
-                        <label for="precio">Precio</label>
-                        <input type="number" id="precio" name="precio">
                     </div>
                 </div>
 
