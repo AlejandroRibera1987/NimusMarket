@@ -51,8 +51,8 @@ if($conection != NULL) {
                         <td><?php echo $fila[stock];?> Un.</td>
                         <td><img src='../img/moneda_index.jpg' alt='Fotos Moneda' class='img_tabla'></td>
                         <td>
-                            <a href="" class='tabla_acciones'><img src="../img/modificar.png" alt="" class="img_acciones"></a>
-                            <a href="" class="tabla_acciones"><img src="../img/eliminar.png" alt="" class="img_acciones"></a>
+                            <a href="" class='tabla_acciones'><img src='../img/modificar.png' alt="" class='img_acciones'></a>
+                            <a href="" class='tabla_acciones'><img src='../img/eliminar.png' alt="" class='img_acciones'></a>
                         </td>
                         ";
                                 
