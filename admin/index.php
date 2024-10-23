@@ -41,21 +41,23 @@ if($conection != NULL) {
                     <tr>
                         <?php
                             while($fila = mysqli_fetch_array($resultado)) {
-                        ?>
-
-                        <td><?php echo $fila['id_producto'];?></td>
-                        <td><?php echo $fila['nombre_producto'];?></td>
-                        <td><?php echo $fila['descripcion_producto'];?></td>
-                        <td><?php echo $fila[`fk_categoria`];?></td>
-                        <td><?php echo $fila['pais'];?></td>
-                        <td>$<?php echo $fila['precio'];?></td>
-                        <td><?php echo $fila['stock'];?> Un.</td>
-                        <td><img src="../img/moneda_index.jpg" alt="Fotos Moneda" class="img_tabla"></td>
+                        echo "
+                        <td><?php echo $fila[id_producto];?></td>
+                        <td><?php echo $fila[nombre_producto];?></td>
+                        <td><?php echo $fila[descripcion_producto];?></td>
+                        <td><?php echo $fila[fk_categoria];?></td>
+                        <td><?php echo $fila[pais];?></td>
+                        <td>$<?php echo $fila[precio];?></td>
+                        <td><?php echo $fila[stock];?> Un.</td>
+                        <td><img src='../img/moneda_index.jpg' alt='Fotos Moneda' class='img_tabla'></td>
                         <td>
-                            <a href="" class="tabla_acciones"><img src="../img/modificar.png" alt="" class="img_acciones"></a>
+                            <a href="" class='tabla_acciones'><img src="../img/modificar.png" alt="" class="img_acciones"></a>
                             <a href="" class="tabla_acciones"><img src="../img/eliminar.png" alt="" class="img_acciones"></a>
                         </td>
-                        <?php } ?>
+                        ";
+                                
+                            } 
+                        ?>
                     </tr>
                 </tbody>
             </table>
