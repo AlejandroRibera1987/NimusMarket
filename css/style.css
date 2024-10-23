@@ -1,13 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-
 /*Header*/
 
 header {
-    background-color: #910094;
+    background-color: #650067;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -25,8 +19,8 @@ header {
 }
 
 .logo figure img {
-   width: 100%;
-   height: 100px;
+    width: 100%;
+    height: 100px;
 }
 
 .menu nav {
@@ -39,7 +33,6 @@ header {
 }
 
 .menu nav ul li {
-    list-style: none;
     margin: 20px;
     text-align: center;
     align-items: center;
@@ -67,10 +60,11 @@ header {
 /*Index Main*/
 
 .fondo_index {
-    background-image: url('/primer_parcial/img/fondo_index.jpg');
-    background-repeat: no-repeat;
+    background-image: url('/NimusMarket/img/fondo_indes2.jpg');
     background-attachment: fixed;
-    background-size: cover; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 600px;
 }
 
@@ -87,7 +81,7 @@ header {
     padding-right: 100px;
     border-radius: 20px;
     box-shadow: 4px 3px 15px black;
-    background-color: #8858ed;
+    background-color: #8209a7;
 }
 
 .oferta_index p {
@@ -138,16 +132,142 @@ header {
 }
 
 .card_vendidos {
-    width: 90%;
-    margin: 50px auto;
+    width: 85%;
+    margin: auto;
+    padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
 }
 
 .cards_productos {
-    background-color: red;
-    height: 100px;
     margin: 5px;
     flex: 0 0 calc(25% - 10px);
+}
+
+.cards_productos img {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.cards_productos p {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.cards_productos p span {
+    font-weight: lighter;
+}
+
+.cards_productos .btn_primary {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.cards_productos .btn_primary a{
+    padding: 5px 50px;
+    background-color: #8858ed;
+    color: white;
+}
+
+/*Categorias index*/
+
+.categorias {
+    background-color: #232223;
+    padding-bottom: 50px;
+}
+
+.categorias h2 {
+    font-size: 3em;
+    padding: 50px 100px;
+}
+
+.cards_categorias {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards_categorias .oro, .plata, .bronce {
+    width: 33%;
+    margin: 10px;
+}
+
+.cards_categorias a img {
+    width: 100%;
+    height: 550px;
+    border-radius: 60px;
+}
+
+.cards_categorias  p {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cards_categorias a:hover img {
+    opacity: 0.5;
+}
+
+/*Footer*/
+
+footer {
+    background-color: black;
+}
+
+.footer1 {
+    display: flex;
+    border-bottom: 2px solid white;
+}
+
+.imgfooter {
+    width: 30%;
+    margin: 30px 40px 0px 0px;
+}
+
+.imgfooter img {
+    width: 100%;
+    height: 300px;
+}
+
+.menuFooter {
+    width: 20%;
+    margin: 70px 40px;
+}
+
+.menuFooter h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.menuFooter ul li {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.footer2 {
+    display: flex;
+    padding: 40px;
+    justify-content: space-between
+}
+
+.metodosPagos h2, .redesFooter h2 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.metodosPagos ul, .redesFooter ul {
+    display: flex;
+}
+
+.metodosPagos ul li, .redesFooter ul li {
+    margin: 10px;
+}
+
+.redesFooter ul li img {
+    width: 20px;
+    margin-right: 30px;
 }
