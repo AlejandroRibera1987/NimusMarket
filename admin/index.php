@@ -1,6 +1,7 @@
 <?php
 
-include_once('../components/header.php')
+include_once('../components/header.php');
+include_once('../components/config/conection.php');
 
 ?>
 
