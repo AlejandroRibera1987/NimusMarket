@@ -52,6 +52,7 @@ include_once('../../components/config/conection.php');
                 </div>
                 <div class="form_modificar">
                     <label for="categoria">Categoria</label>
+                    <?php ?>
                     <input type="text" id="categoria" name="categoria" value="<?php echo $categoria;?>">
                 </div>
                 <div class="form_modificar descripcion_modificar">
