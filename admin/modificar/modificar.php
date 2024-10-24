@@ -11,7 +11,10 @@ include_once('../../components/config/conection.php');
 
             $id = mysqli_real_escape_string ($conection, $_GET['id']);
 
-            $consulta = "SELECT * FROM `productos` WHERE id_producto = '$id'";
+            $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.precio, p.stock, p.img_producto
+            FROM productos p
+            INNER JOIN categorias c ON p.fk_categoria = c.id_categoria
+            WHERE p.id_producto = '$id'";
             $resultado = mysqli_query($conection, $consulta);
 
             
@@ -21,7 +24,8 @@ include_once('../../components/config/conection.php');
             $pais = $dato['pais'];
             $precio = $dato['precio'];
             $stock = $dato['stock'];
-            $categoria = $dato['fk_categoria'];
+            $categoria = $dato['nombre_categoria'];
+            $img_producto = $dato['img_producto'];
 
         }
     }
@@ -34,44 +38,40 @@ include_once('../../components/config/conection.php');
                 <li class="btn_primary"><a href="../index.php">Ver Producto</a></li>
             </ul>
         </div>
-        <div class="agregar_producto">
+        <div class="agregar_producto modificar_producto">
             <h2>Modificar Producto</h2>
-            <form action="agregar.php" method="post" enctype="multipart/form-data">
+            <form action="modificar_ok.php" method="post" enctype="multipart/form-data">
                 
-                <div class="form_1">
-                    <div class="nombre_form">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
-                    </div>
-                    <div class="pais_form">
-                        <label for="pais">Pais</label>
-                        <input type="text" id="pais" name="pais" value="<?php echo $pais;?>">
-                    </div>
+                <div class="form_modificar">
+                    <label for="nombre">Producto</label>
+                    <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
                 </div>
-                    <div class="categoria_form">
-                        <label for="categoria">Categoria</label>
-                        <input type="text" id="categoria" name="categoria">
-                    </div>
-                    <div class="descripcion_form">
-                        <label for="descripcion">Descripcion</label>
-                        <textarea name="descripcion" id="descripcion"><?php echo $descripcion;?></textarea>
-                    </div>
-                    <div class="precio_form">
-                        <label for="precio">Precio</label>
-                        <input type="number" id="precio" name="precio" value="<?php echo $precio;?>">
-                    </div>
-                <div class="form_1">
-                    <div class="img_form">
-                        <label for="img_producto">Imagen del Producto</label>
-                        <input type="file" accept="image/*" id="img_producto" name="img_producto">
-                    </div>
-                    <div class="stock_form">
-                        <label for="stock">Inventario</label>
-                        <input type="number" id="stock" name="stock" value="<?php echo $stock;?>">
-                    </div>
+                <div class="form_modificar">
+                    <label for="pais">Pais</label>
+                    <input type="text" id="pais" name="pais" value="<?php echo $pais;?>">
                 </div>
-                <div class="btn_form">
-                    <input type="submit" value="Cargar" >
+                <div class="form_modificar">
+                    <label for="categoria">Categoria</label>
+                    <input type="text" id="categoria" name="categoria" value="<?php echo $categoria;?>">
+                </div>
+                <div class="form_modificar descripcion_modificar">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="descripcion" id="descripcion"><?php echo $descripcion;?></textarea>
+                </div>
+                <div class="form_modificar">
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" name="precio" value="<?php echo $precio;?>">
+                </div>
+                <div class="form_modificar">
+                    <label for="stock">Inventario</label>
+                    <input type="number" id="stock" name="stock" value="<?php echo $stock;?>">
+                </div>
+                <div class="form_modificar">
+                    <label for="img_producto">Imagen</label>
+                    <div class="img_modificar">
+                        <img src="../../img_db/<?php echo $img_producto;?>" alt="Imagen del Producto">
+                    </div>
+                    <input type="file" accept="image/*" id="img_producto" name="img_producto">
                 </div>
             </form>
         </div>

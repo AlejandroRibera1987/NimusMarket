@@ -37,6 +37,7 @@ if($conection != NULL) {
         //Ejecutamos la Consulta
 
         mysqli_query($conection, $consulta);
+
     }
 }
 
@@ -48,6 +49,7 @@ if($conection != NULL) {
                 <li class="btn_primary"><a href="../index.php">Ver Producto</a></li>
             </ul>
         </div>
+
         <div class="agregar_producto">
             <h2>Agregar Producto</h2>
             <form action="agregar.php" method="post" enctype="multipart/form-data">
