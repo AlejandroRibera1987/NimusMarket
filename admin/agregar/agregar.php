@@ -12,27 +12,27 @@ if($conection != NULL) {
     $precio;
 
 
-    if(isset($_GET['nombre']) || isset($_GET['pais']) || isset($_GET['categoria']) || isset($_GET['descripcion']) || isset($_GET['stock']) || isset($_GET['precio'])){
+    if(isset($_POST['nombre']) || isset($_POST['pais']) || isset($_POST['categoria']) || isset($_POST['descripcion']) || isset($_POST['stock']) || isset($_POST['precio'])){
 
 
-        $nombre = mysqli_real_escape_string ($conection,$_GET['nombre']);
-        $pais = mysqli_real_escape_string ($conection,$_GET['pais']);
-        $categoria = mysqli_real_escape_string ($conection,$_GET['categoria']);
-        $descripcion = mysqli_real_escape_string ($conection,$_GET['descripcion']);
-        $stock = mysqli_real_escape_string ($conection,$_GET['stock']);
-        $precio = mysqli_real_escape_string ($conection,$_GET['precio']);
+        $nombre = mysqli_real_escape_string ($conection,$_POST['nombre']);
+        $pais = mysqli_real_escape_string ($conection,$_POST['pais']);
+        $categoria = mysqli_real_escape_string ($conection,$_POST['categoria']);
+        $descripcion = mysqli_real_escape_string ($conection,$_POST['descripcion']);
+        $stock = mysqli_real_escape_string ($conection,$_POST['stock']);
+        $precio = mysqli_real_escape_string ($conection,$_POST['precio']);
 
         //Guardamos la imagen
-       // $temporal = $_FILES ['img_producto']['tmp_name'];
-       // $nombreImg = $nombre . "_" . $categoria .".jpg";
+        $temporal = $_FILES ['img_producto']['tmp_name'];
+        $nombreImg = $nombre . "_" . $categoria .".jpg";
     
-      //  move_uploaded_file($temporal, "../../img_bd/$nombreImg");
+        move_uploaded_file($temporal, "../../img_db/$nombreImg");
     
         //Fin de Imagen Guardada
 
         //Guardo los datos
 
-        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`, `fk_categoria`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock', '$categoria')";
+        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`, `img_producto`, `fk_categoria`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock', '$nombreImg', '$categoria')";
 
         //Ejecutamos la Consulta
 
@@ -45,7 +45,7 @@ if($conection != NULL) {
     <main>
         <div class="agregar_producto">
             <h2>Agregar Producto</h2>
-            <form action="agregar.php" method="get" enctype="multipart/form-data">
+            <form action="agregar.php" method="post" enctype="multipart/form-data">
                 <div class="form_1">
                     <div class="nombre_form">
                         <label for="nombre">Nombre</label>

@@ -5,7 +5,7 @@ include_once('../components/config/conection.php');
 
 if($conection != NULL) {
 
-    $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.    precio, p.stock 
+    $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.    precio, p.stock, p.img_producto
                 FROM productos p
                 INNER JOIN categorias c ON p.fk_categoria = c.id_categoria";
 
@@ -54,7 +54,7 @@ if($conection != NULL) {
                         <td>$fila[pais]</td>
                         <td>$ $fila[precio]</td>
                         <td>$fila[stock] Un.</td>
-                        <td><img src='../img/moneda_index.jpg' alt='Fotos Moneda' class='img_tabla'></td>
+                        <td><img src='../img_db/$fila[img_producto]' alt='Fotos Moneda' class='img_tabla'></td>
                         <td>
                             <a href='' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
                             <a href='' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
