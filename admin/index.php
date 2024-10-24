@@ -5,9 +5,13 @@ include_once('../components/config/conection.php');
 
 if($conection != NULL) {
 
-    $consulta = "SELECT `id_producto`, `nombre_producto`, `descripcion_producto`, `fk_categoria`, `pais`, `precio`, `stock` FROM `productos`";
+    $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.    precio, p.stock 
+                FROM productos p
+                INNER JOIN categorias c ON p.fk_categoria = c.id_categoria";
 
     $resultado = mysqli_query ($conection,$consulta);
+
+    
 }
 
 ?>
@@ -46,7 +50,7 @@ if($conection != NULL) {
                         <td>$fila[id_producto]</td>
                         <td>$fila[nombre_producto]</td>
                         <td>$fila[descripcion_producto]</td>
-                        <td>$fila[fk_categoria]</td>
+                        <td>$fila[nombre_categoria]</td>
                         <td>$fila[pais]</td>
                         <td>$ $fila[precio]</td>
                         <td>$fila[stock] Un.</td>

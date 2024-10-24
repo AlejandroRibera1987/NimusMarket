@@ -32,7 +32,7 @@ if($conection != NULL) {
 
         //Guardo los datos
 
-        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock')";
+        $consulta = "INSERT INTO `productos`(`nombre_producto`, `descripcion_producto`, `pais`, `precio`, `stock`, `fk_categoria`) VALUES ('$nombre','$descripcion','$pais','$precio','$stock', '$categoria')";
 
         //Ejecutamos la Consulta
 
