@@ -47,18 +47,18 @@ if($conection != NULL) {
                             while($fila = mysqli_fetch_array($resultado)) {
                         echo "
                         <tr>
-                        <td>$fila[id_producto]</td>
-                        <td>$fila[nombre_producto]</td>
-                        <td>$fila[descripcion_producto]</td>
-                        <td>$fila[nombre_categoria]</td>
-                        <td>$fila[pais]</td>
-                        <td>$ $fila[precio]</td>
-                        <td>$fila[stock] Un.</td>
-                        <td><img src='../img_db/$fila[img_producto]' alt='Fotos Moneda' class='img_tabla'></td>
-                        <td>
-                            <a href='' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
-                            <a href='' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
-                        </td>
+                            <td>$fila[id_producto]</td>
+                            <td>$fila[nombre_producto]</td>
+                            <td>$fila[descripcion_producto]</td>
+                            <td>$fila[nombre_categoria]</td>
+                            <td>$fila[pais]</td>
+                            <td>$ $fila[precio]</td>
+                            <td>$fila[stock] Un.</td>
+                            <td><img src='../img_db/$fila[img_producto]' alt='Fotos Moneda' class='img_tabla'></td>
+                            <td>
+                                <a href='modificar/modificar.php?id=$fila[id_producto]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
+                                <a href='' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
+                            </td>
                         <tr>
                         ";
                                 

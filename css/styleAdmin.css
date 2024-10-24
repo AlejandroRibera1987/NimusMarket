@@ -110,7 +110,7 @@
     margin: 20px;
 }
 
-.precio_form {
+.precio_form, .categoria_form {
     align-items: center ;
 }
 
