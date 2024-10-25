@@ -22,33 +22,23 @@ include_once('../../components/config/conection.php');
             $precio = mysqli_real_escape_string($conection, $_POST['precio']);
             $stock = mysqli_real_escape_string($conection, $_POST['stock']);
 
-            $consulta_img_actual = "SELECT img_producto FROM productos WHERE id_producto = '$id'";
-            $resultado_img_actual = mysqli_query($conection, $consulta_img_actual);
 
-            $img_producto = $resultado_img_actual;
 
-            if($_FILES['img_producto'] && $_FILES['img_producto']['error']){
-                $temporal = $_FILES['img_producto']['tmp_name'];
+            $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `fk_categoria`='$categoria'";
+            
+
+            if(!empty($_FILES['img_producto']['name'])){
+                $temporal = $_FILES ['img_producto']['tmp_name'];
                 $nombre_img_original = $_FILES['img_producto']['name'];
                 $nombreImg = $nombre_img_original . ".jpg";
-                
 
                 move_uploaded_file($temporal, "../../img_db/$nombreImg");
-                    
-                
-
-                $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `img_producto`='$img_producto', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
-    
-                mysqli_query($conection, $consulta_modificacion);
-        
-                header('Location: ../index.php');
-            }
-            else{
-                echo "No se pudo move la imagen";
+                $consulta_modificacion .= ", img_producto = '$nombreImg'";
             }
 
-            $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
-    
+            $consulta_modificacion .= "WHERE id_producto = '$id'";
+
+
             mysqli_query($conection, $consulta_modificacion);
     
             header('Location: ../index.php');
