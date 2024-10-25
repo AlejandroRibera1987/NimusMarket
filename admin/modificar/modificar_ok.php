@@ -29,12 +29,13 @@ include_once('../../components/config/conection.php');
 
             if($_FILES['img_producto'] && $_FILES['img_producto']['error']){
                 $temporal = $_FILES['img_producto']['tmp_name'];
+                $nombre_img_original = $_FILES['img_producto']['name'];
+                $nombreImg = $nombre_img_original . ".jpg";
                 
-                $nombreImg = $nombre . "_.jpg";
 
                 move_uploaded_file($temporal, "../../img_db/$nombreImg");
                     
-                $img_producto = $nombreImg;
+                
 
                 $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `img_producto`='$img_producto', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
     
@@ -45,6 +46,7 @@ include_once('../../components/config/conection.php');
             else{
                 echo "No se pudo move la imagen";
             }
+
             $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
     
             mysqli_query($conection, $consulta_modificacion);

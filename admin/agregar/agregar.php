@@ -25,7 +25,8 @@ if($conection != NULL) {
         
         //Guardamos la imagen
         $temporal = $_FILES ['img_producto']['tmp_name'];
-        $nombreImg = $nombre . "_.jpg";
+        $nombre_img_original = $_FILES['img_producto']['name'];
+        $nombreImg = $nombre_img_original . ".jpg";
     
         move_uploaded_file($temporal, "../../img_db/$nombreImg");
     
