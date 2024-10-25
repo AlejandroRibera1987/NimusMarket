@@ -1,5 +1,4 @@
 <?php
-echo "Modificasion exitosa";
 include_once('../../components/config/conection.php');
 
     if($conection != NULL){
@@ -23,33 +22,35 @@ include_once('../../components/config/conection.php');
             $precio = mysqli_real_escape_string($conection, $_POST['precio']);
             $stock = mysqli_real_escape_string($conection, $_POST['stock']);
 
+            $consulta_img_actual = "SELECT img_producto FROM productos WHERE id_producto = '$id'";
+            $resultado_img_actual = mysqli_query($conection, $consulta_img_actual);
 
-            if($_FILES['img_producto']){
-                //Guardamos la imagen
-                $temporal = $_FILES ['img_producto']['tmp_name'];
-                $nombreImg = $nombre . "_" . $categoria .".jpg";
-            
-                move_uploaded_file($temporal, "../../img_db/$nombreImg");
-        
-                //Fin de Imagen Guardada
+            $img_producto = $resultado_img_actual;
+
+            if($_FILES['img_producto'] && $_FILES['img_producto']['error']){
+                $temporal = $_FILES['img_producto']['tmp_name'];
                 
-                $consutla = "UPDATE `productos` SET `nombre_producto`='$nombre',`descripcion_producto`='$descripcion',`pais`='$pais',`precio`='$precio',`stock`='$stock',`img_producto`='$nombreImg',`fk_categoria`='$categoria' WHERE id_producto = '$id'";
+                $nombreImg = $nombre . "_.jpg";
 
-                mysqli_query($conection, $consutla);
+                move_uploaded_file($temporal, "../../img_db/$nombreImg");
+                    
+                $img_producto = $nombreImg;
 
+                $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `img_producto`='$img_producto', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
+    
+                mysqli_query($conection, $consulta_modificacion);
+        
                 header('Location: ../index.php');
-
-            }else{
-                $consutla = "UPDATE `productos` SET `nombre_producto`='$nombre',`descripcion_producto`='$descripcion',`pais`='$pais',`precio`='$precio',`stock`='$stock',`fk_categoria`='$categoria' WHERE id_producto = '$id'";
-
-                mysqli_query($conection, $consutla);
-
-                header('Location: ../index.php.php');
             }
-
-          
+            else{
+                echo "No se pudo move la imagen";
+            }
+            $consulta_modificacion = "UPDATE `productos` SET `nombre_producto`='$nombre', `descripcion_producto`='$descripcion', `pais`='$pais', `precio`='$precio', `stock`='$stock', `fk_categoria`='$categoria' WHERE `id_producto` = '$id'";
+    
+            mysqli_query($conection, $consulta_modificacion);
+    
+            header('Location: ../index.php');
         }
-
 
 
     }

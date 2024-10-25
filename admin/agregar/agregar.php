@@ -25,7 +25,7 @@ if($conection != NULL) {
         
         //Guardamos la imagen
         $temporal = $_FILES ['img_producto']['tmp_name'];
-        $nombreImg = $nombre . "_" . $categoria .".jpg";
+        $nombreImg = $nombre . "_.jpg";
     
         move_uploaded_file($temporal, "../../img_db/$nombreImg");
     
@@ -39,6 +39,7 @@ if($conection != NULL) {
 
         mysqli_query($conection, $consulta);
 
+        header('Location: ../index.php?ok=ok');
     }
             
     

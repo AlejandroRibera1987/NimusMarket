@@ -25,6 +25,12 @@ if($conection != NULL) {
             </ul>
         </div>
 
+        <?php
+            if(isset($_GET['ok'])){
+                echo"Se cargo correctamente";
+            }
+        ?>
+
         <div class="tabla_productos">
             <h2>Productos</h2>
             <table>
