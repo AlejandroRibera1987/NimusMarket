@@ -11,12 +11,12 @@ include_once('../../components/config/conection.php');
 
             $id = mysqli_real_escape_string ($conection, $_GET['id']);
 
-            $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.precio, p.stock, p.img_producto
+            $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.precio, p.stock, p.img_producto, p.fk_categoria
             FROM productos p
             INNER JOIN categorias c ON p.fk_categoria = c.id_categoria
             WHERE p.id_producto = '$id'";
             $resultado = mysqli_query($conection, $consulta);
-
+            
             
             $dato = mysqli_fetch_array($resultado);
             $nombre = $dato['nombre_producto'];
@@ -25,8 +25,10 @@ include_once('../../components/config/conection.php');
             $precio = $dato['precio'];
             $stock = $dato['stock'];
             $categoria = $dato['nombre_categoria'];
+            $id_categoria = $dato['fk_categoria'];
             $img_producto = $dato['img_producto'];
-
+            
+           
         }
     }
 
@@ -41,7 +43,7 @@ include_once('../../components/config/conection.php');
         <div class="agregar_producto modificar_producto">
             <h2>Modificar Producto</h2>
             <form action="modificar_ok.php" method="post" enctype="multipart/form-data">
-                
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form_modificar">
                     <label for="nombre">Producto</label>
                     <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
@@ -52,9 +54,16 @@ include_once('../../components/config/conection.php');
                 </div>
                 <div class="form_modificar">
                     <label for="categoria">Categoria</label>
-                    <?php ?>
-                    <input type="text" id="categoria" name="categoria" value="<?php echo $categoria;?>">
-                </div>
+                    <select name="categoria" id="categoria">
+                        <option value="<?php echo $id_categoria?>"><?php echo $categoria;?></option>
+                        <?php 
+                            $consulta_categoria = mysqli_query($conection,"SELECT * FROM categorias");
+                            while($seccion = mysqli_fetch_array($consulta_categoria)){
+                        ?>
+                            <option value="<?php echo $seccion['id_categoria'];?>"><?php echo $seccion['nombre_categoria'];?></option>
+                        <?php } ?>
+                    </select>
+                </div>    
                 <div class="form_modificar descripcion_modificar">
                     <label for="descripcion">Descripcion</label>
                     <textarea name="descripcion" id="descripcion"><?php echo $descripcion;?></textarea>
@@ -73,6 +82,9 @@ include_once('../../components/config/conection.php');
                         <img src="../../img_db/<?php echo $img_producto;?>" alt="Imagen del Producto">
                     </div>
                     <input type="file" accept="image/*" id="img_producto" name="img_producto">
+                </div>
+                <div class="btn_form">
+                    <input type="submit" value="Modificar" >
                 </div>
             </form>
         </div>

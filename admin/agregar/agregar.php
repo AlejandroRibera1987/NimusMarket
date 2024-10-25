@@ -12,7 +12,7 @@ if($conection != NULL) {
     $precio;
 
 
-    if(isset($_POST['nombre']) || isset($_POST['pais']) || isset($_POST['categoria']) || isset($_POST['descripcion']) || isset($_POST['stock']) || isset($_POST['precio'])){
+    if(isset($_POST['nombre']) and isset($_POST['pais']) and isset($_POST['categoria']) and isset($_POST['descripcion']) and isset($_POST['stock']) and isset($_POST['precio'])){
 
 
         $nombre = mysqli_real_escape_string ($conection,$_POST['nombre']);
@@ -22,6 +22,7 @@ if($conection != NULL) {
         $stock = mysqli_real_escape_string ($conection,$_POST['stock']);
         $precio = mysqli_real_escape_string ($conection,$_POST['precio']);
 
+        
         //Guardamos la imagen
         $temporal = $_FILES ['img_producto']['tmp_name'];
         $nombreImg = $nombre . "_" . $categoria .".jpg";
@@ -39,6 +40,8 @@ if($conection != NULL) {
         mysqli_query($conection, $consulta);
 
     }
+            
+    
 }
 
 ?>
