@@ -41,7 +41,10 @@ include_once('../../components/config/conection.php');
 
             mysqli_query($conection, $consulta_modificacion);
     
-            header('Location: ../index.php');
+            header('Location: ../index.php?modificacion=ok');
+        }else{
+
+            header('Location: ../index.php?modificacionno=ok');
         }
 
 

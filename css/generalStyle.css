@@ -28,3 +28,17 @@ ul li {
     background-color: rgb(99, 8, 185);
     transition: background-color 0.8s ease;
 }
+
+.alerta_ok {
+    color: green;
+    font-size: 1.3em;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.alerta_error {
+    color: red;
+    font-size: 1.3em;
+    text-align: center;
+    padding-top: 20px;    
+}

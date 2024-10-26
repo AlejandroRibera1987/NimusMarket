@@ -172,3 +172,68 @@
     height: 200px;
     border-radius: 20px;
 }
+
+/*Eliminar Producto*/
+
+.cards_eliminacion {
+    background-color: black;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.cards_eliminacion h2 {
+    padding-bottom: 20px;
+    font-size: 1.9em;
+}
+
+.cards_eliminacion p {
+    margin: 20px;
+    font-size: 1.3em;
+}
+
+.cards_eliminacion .descripcion {
+    background-color: #4F4F4F;
+    border-radius: 20px;
+    padding: 2px 0px;
+    width: 20%;
+    margin: auto;
+}
+
+.cards_eliminacion img {
+    width: 300px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.cards_eliminacion form {
+    margin-top: 20px;
+}
+
+.cards_eliminacion form .btn_aceptar {
+    margin: 10px;
+    padding: 4px 0px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #E66062;
+    color: white;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+.cards_eliminacion form .btn_cancel {
+    background-color: rgb(9, 149, 162);
+    color: white;
+    font-size: 1.5em;
+    padding: 4px 6px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.cards_eliminacion form .btn_cancel:hover {
+    background-color: gray;
+}
+
+.cards_eliminacion form .btn_aceptar:hover {
+    background-color: gray;
+}

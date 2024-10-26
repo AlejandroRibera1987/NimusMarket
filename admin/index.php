@@ -24,14 +24,25 @@ if($conection != NULL) {
                 <li class="btn_primary"><a href="">Categorias</a></li>
             </ul>
         </div>
-
-        <?php
-            if(isset($_GET['ok'])){
-                echo"Se cargo correctamente";
-            }
-        ?>
-
+        
         <div class="tabla_productos">
+            <?php
+                if(isset($_GET['ok'])){
+                    echo"<p class='alerta_ok'>Se a cargado el producto Correctamente</p>";
+                }
+                if(isset($_GET['no'])){
+                    echo"<p class='alerta_error'>No se cargo el producto Correctamente</p>";
+                }
+                if(isset($_GET['modificacion'])){
+                    echo"<p class='alerta_ok'>Se a modificado el producto Correctamente</p>";
+                }
+                if(isset($_GET['modificacionno'])){
+                    echo"<p class='alerta_error'>Se a asdadasdasda el producto Correctamente</p>";
+                }
+                if(isset($_GET['Eliminar'])){
+                    echo"<p class='alerta_error'>Se elimino el producto Correctamente</p>";
+                }
+            ?>
             <h2>Productos</h2>
             <table>
                 <thead>
@@ -63,7 +74,7 @@ if($conection != NULL) {
                             <td><img src='../img_db/$fila[img_producto]' alt='Fotos Moneda' class='img_tabla'></td>
                             <td>
                                 <a href='modificar/modificar.php?id=$fila[id_producto]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
-                                <a href='' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
+                                <a href='eliminar/eliminar.php?id=$fila[id_producto]' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
                             </td>
                         <tr>
                         ";

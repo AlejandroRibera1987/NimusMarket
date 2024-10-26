@@ -28,7 +28,6 @@ include_once('../../components/config/conection.php');
             $id_categoria = $dato['fk_categoria'];
             $img_producto = $dato['img_producto'];
             
-           
         }
     }
 

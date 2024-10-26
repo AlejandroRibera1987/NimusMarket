@@ -41,6 +41,8 @@ if($conection != NULL) {
         mysqli_query($conection, $consulta);
 
         header('Location: ../index.php?ok=ok');
+    }else{
+        //header('Location: ../index.php?no=ok');
     }
             
     
