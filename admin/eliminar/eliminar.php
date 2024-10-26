@@ -43,7 +43,7 @@ include_once('../../components/config/conection.php');
             </div>
             
             <a href="../index.php" class="btn_cancel">Cancelar</a>
-            <a href="eliminar_ok.php?<?php $dato['id_producto'];?>" class="btn_aceptar">Eliminar</a>
+            <a href="eliminar_ok.php?id=<?php echo $id;?>" class="btn_aceptar">Eliminar</a>
 
         </div>
     </main>
