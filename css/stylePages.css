@@ -1,0 +1,38 @@
+/*Pages Productos*/
+
+.pages_productos {
+    display: flex;
+}
+
+.aside_categoria {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(35,34,35,0.9192051820728291) 88%);
+    width: 20%;
+    padding: 30px;
+}
+
+.aside_categoria h2 {
+    margin: 10px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.aside_categoria .lista {
+    text-align: center;
+}
+
+.aside_categoria .lista ul li {
+    margin: 20px auto;
+}
+
+.productos {
+    background-color: #232223;
+    width: 80%;
+    position: inherit;
+    padding: 50px;
+}
+
+.productos .producto_lista {
+    background-color: red;
+    margin: 0px 50px 30px 30px;
+}

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/NimusMarket/css/style.css">
     <link rel="stylesheet" href="/NimusMarket/css/generalStyle.css">
     <link rel="stylesheet" href="/NimusMarket/css/styleAdmin.css">
+    <link rel="stylesheet" href="/NimusMarket/css/stylePages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="">Productos</a></li>
+                    <li><a href="/NimusMarket/pages/productos.php">Productos</a></li>
                     <li><a href="">Ofertas</a></li>
                     <li><a href="">Contáctenos</a></li>
                     <li class="link_usuario">
