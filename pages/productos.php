@@ -25,28 +25,24 @@ include_once('../components/header.php');
                 </div>
             </aside>
             <section class="productos">
-                <div class="producto_lista">
-                    <div class="titulo_e_img">
-                        <h2>Nombre de la moneda</h2>
-                        <figure>
-                            <img src="" alt="Imagen de moneda">
-                        </figure>
+                <div class="productos_lista">
+                    <div class="cards_producto_lista">
+                        <div class="titulo_img">
+                            <h2>Nombre de la moneda</h2>
+                            <figure>
+                                <img src="../img/moneda1.jpg" alt="Foto de la moneda">
+                            </figure>
+                        </div>
+                        <div class="descripcion_cards_producto">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem .</p>
+                            <div class="categoria_precio_cards">
+                                <p>Oro</p>
+                                <p>$17367</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="descripcion_producto">
-                        <p>Aca va la descripcion del producto</p>
-                        <a href="" class="btn_producto">Ver Más</a>
-                    </div>
-                </div>
-                <div class="producto_lista">
-                    <div class="titulo_e_img">
-                        <h2>Nombre de la moneda</h2>
-                        <figure>
-                            <img src="" alt="Imagen de moneda">
-                        </figure>
-                    </div>
-                    <div class="descripcion_producto">
-                        <p>Aca va la descripcion del producto</p>
-                        <a href="" class="btn_producto">Ver Más</a>
+                    <div class="btn_cards_producto">
+                        <a href="">Ver más</a>
                     </div>
                 </div>
             </section>
