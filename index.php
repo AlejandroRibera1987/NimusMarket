@@ -17,7 +17,7 @@ include('components/header.php');
                 </div>
                 <div class="img_oferta">
                     <figure>
-                        <img src="img/moneda_index.jpg" alt="Foto de la Oferta">
+                        <img src="img/Moneda_index.jpg" alt="Foto de la Oferta">
                     </figure>
                 </div>
             </div>
