@@ -3,24 +3,42 @@
 include_once('../components/header.php');
 include_once('../components/config/conection.php');
 
-    if($conection != NULL){
+if($conection != NULL){
+    $id;
+
+    if(isset($_GET['id'])){
+
+        $id = mysqli_real_escape_string ($conection, $_GET['id']);
 
         $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.precio, p.stock, p.img_producto, p.fk_categoria
         FROM productos p
-        INNER JOIN categorias c ON p.fk_categoria = c.id_categoria";
+        INNER JOIN categorias c ON p.fk_categoria = c.id_categoria
+        WHERE `fk_categoria` = '$id';";
+
         $resultado = mysqli_query($conection, $consulta);
+        
+        if($id == 1){
+            $categoria = "Oro";
+        }if($id == 2) {
+            $categoria = "Plata";
+        }if($id == 3){
+            $categoria = "Bronce";
+        }
+
+       
 
     }
+}
 
 ?>
 
-    <main>
+<main>
         <div class="pages_productos">        
             <?php include_once('../components/asidepages.php');?>
             <section class="productos">
-                <h2 class="titulo_categorias">Todos los Productos</h2>
+                <h2 class="titulo_categorias">Monedas de <?php echo $categoria; ?></h2>
                 <?php 
-                    while($fila = mysqli_fetch_array($resultado)){
+                    while($fila = mysqli_fetch_array($resultado) ){
                         echo "
                             <div class='productos_lista'>
                                 <div class='cards_producto_lista'>
@@ -32,8 +50,8 @@ include_once('../components/config/conection.php');
                                     </div>
                                     <div class='descripcion_cards_producto'>
                                         <p>$fila[descripcion_producto]</p>
-                                        <div class='categoria_precio_cards'>
-                                            <p>$fila[nombre_categoria]</p>
+                                        <div class='categoria_precio_cards'> 
+                                            <p>$fila[nombre_categoria]</p>                                           
                                             <p>$$fila[precio]</p>
                                         </div>
                                     </div>
@@ -48,7 +66,6 @@ include_once('../components/config/conection.php');
             </section>
         </div>
     </main>
-
 
 <?php
 

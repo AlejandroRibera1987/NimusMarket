@@ -35,24 +35,7 @@ if($conection != NULL){
 
     <main>
         <div class="pages_productos">
-            <aside class="aside_categoria">
-                <h2>Categorias</h2>
-                <div class="lista">
-                    <ul>
-                        <li><a href="">Monedas de Oro</a></li>
-                        <li><a href="">Monedas de Plata</a></li>
-                        <li><a href="">Monedas de Bronce</a></li>
-                    </ul>
-                </div>
-                <h2>Ofertas</h2>
-                <div class="lista">
-                    <ul>
-                        <li><a href="">Ofertas de la semana</a></li>
-                        <li><a href="">Black Friday</a></li>
-                        <li><a href="">Otras Ofertas</a></li>
-                    </ul>
-                </div>
-            </aside>
+        <?php include_once('../components/asidepages.php');?>
             <section class="productos">
                 <div class="moneda_individual">
                     <div class="datos_monedas">
