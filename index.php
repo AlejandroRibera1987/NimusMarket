@@ -17,7 +17,7 @@ include('components/header.php');
                 </div>
                 <div class="img_oferta">
                     <figure>
-                        <img src="/NimusMarket/img/moneda_index.jpg" alt="Foto de la Oferta">
+                        <img src="img/moneda_index.jpg" alt="Foto de la Oferta">
                     </figure>
                 </div>
             </div>
@@ -34,7 +34,7 @@ include('components/header.php');
             <div class="card_vendidos">
                 <div class="cards_productos">
                     <figure>
-                        <img src="/NimusMarket/img/moneda1.jpg" alt="Producto mas vendido">
+                        <img src="img/moneda1.jpg" alt="Producto mas vendido">
                         <p>Moneda Austriaca 1817</p>
                         <p><span>$5,562</span></p>
                     </figure>
@@ -44,7 +44,7 @@ include('components/header.php');
                 </div>
                 <div class="cards_productos">
                     <figure>
-                        <img src="/NimusMarket/img/moneda2.jpg" alt="Producto mas vendido">
+                        <img src="img/moneda2.jpg" alt="Producto mas vendido">
                         <p>Moneda Austriaca 1817</p>
                         <p><span>$5,562</span></p>
                     </figure>
@@ -54,7 +54,7 @@ include('components/header.php');
                 </div>
                 <div class="cards_productos">
                     <figure>
-                        <img src="/NimusMarket/img/moneda3.jpg" alt="Producto mas vendido">
+                        <img src="img/moneda3.jpg" alt="Producto mas vendido">
                         <p>Moneda Austriaca 1817</p>
                         <p><span>$5,562</span></p>
                     </figure>
@@ -64,7 +64,7 @@ include('components/header.php');
                 </div>
                 <div class="cards_productos">
                     <figure>
-                        <img src="/NimusMarket/img/moneda4.jpg" alt="Producto mas vendido">
+                        <img src="img/moneda4.jpg" alt="Producto mas vendido">
                         <p>Moneda Austriaca 1817</p>
                         <p><span>$5,562</span></p>
                     </figure>
@@ -79,25 +79,25 @@ include('components/header.php');
             <h2>CATEGORIAS</h2>
             <div class="cards_categorias">
                 <div class="oro">
-                    <a href="">
+                    <a href="pages/productoscategoria.php?id=1">
                         <figure>
-                            <img src="/NimusMarket/img/MonedaOro.jpg" alt="Categoria Oro">
+                            <img src="img/MonedaOro.jpg" alt="Categoria Oro" class="imagen_zoom">
                             <p>ORO</p>
                         </figure>
                     </a>
                 </div>
                 <div class="plata">
-                    <a href="">
+                    <a href="pages/productoscategoria.php?id=2">
                         <figure>
-                            <img src="/NimusMarket/img/MonedaPlata.jpg" alt="Categoria Plata">
+                            <img src="img/MonedaPlata.jpg" alt="Categoria Plata" class="imagen_zoom">
                             <p>PLATA</p>
                         </figure>
                     </a>
                 </div>
                 <div class="bronce">
-                    <a href="">
+                    <a href="pages/productoscategoria.php?id=3">
                         <figure>
-                            <img src="/NimusMarket/img/MonedaBronce.jpg" alt="Categoria Bronce">
+                            <img src="img/MonedaBronce.jpg" alt="Categoria Bronce" class="imagen_zoom">
                             <p>BRONCE</p>
                         </figure>
                     </a>
