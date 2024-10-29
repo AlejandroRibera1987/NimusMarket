@@ -27,12 +27,6 @@ if($conection != NULL) {
         
         <div class="tabla_productos">
             <?php
-                if(isset($_GET['ok'])){
-                    echo"<p class='alerta_ok'>Se a cargado el producto Correctamente</p>";
-                }
-                if(isset($_GET['no'])){
-                    echo"<p class='alerta_error'>No se cargo el producto Correctamente</p>";
-                }
                 if(isset($_GET['modificacion'])){
                     echo"<p class='alerta_ok'>Se a modificado el producto Correctamente</p>";
                 }
