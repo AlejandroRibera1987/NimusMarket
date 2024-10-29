@@ -42,7 +42,7 @@ include_once('../../components/config/conection.php');
                 <img src="../../img_db/<?php echo $img_producto ?>" alt="Imagen a Eliminar">
             </div>
             
-            <a href="../index.php" class="btn_cancel">Cancelar</a>
+            <a href="../index.php" class="btn_cancelar">Cancelar</a>
             <a href="eliminar_ok.php?id=<?php echo $id;?>" class="btn_aceptar">Eliminar</a>
 
         </div>
