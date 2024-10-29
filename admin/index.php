@@ -20,7 +20,7 @@ if($conection != NULL) {
         <div class="menu_admin">
             <ul>
                 <li class="btn_primary"><a href="agregar/agregar.php">Agregar Producto</a></li>
-                <li class="btn_primary"><a href="">Usuario</a></li>
+                <li class="btn_primary"><a href="usuario/agregar_usuario.php">Agregar Usuario</a></li>
                 <li class="btn_primary"><a href="">Categorias</a></li>
             </ul>
         </div>

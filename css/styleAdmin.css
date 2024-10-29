@@ -231,3 +231,83 @@
     background-color: rgb(255, 0, 0);
     transition: background-color 0.8s ease;
 }
+
+/*Agregar Usuario*/
+
+.usuario_nuevo {
+    background-color: #232223;
+    padding-bottom: 50px;
+}
+
+.usuario_nuevo h2 {
+    text-align: center;
+    padding: 30px;
+    font-size: 2.3em;
+    letter-spacing: 5px;
+}
+
+.usuario_nuevo form {
+    width: 30%;
+    margin: auto;
+    justify-content: center;
+    background-color: gray;
+    border: 1px solid #232223;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+.usuario_nuevo form input, .usuario_nuevo .rol_usuario select {
+    background-color: azure;
+    height: 40px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 20px;
+    margin: 10px 0px;
+}
+
+.usuario_nuevo .nombres_usuarios {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.usuario_nuevo .nombres_usuarios input {
+    width: 150px;
+}
+
+.usuario_nuevo .correo_usuario,
+.usuario_nuevo .claves {
+    width: 90%;
+    margin: auto;
+}
+
+.usuario_nuevo .correo_usuario input, 
+.usuario_nuevo .claves input {
+    width: 90%;
+}
+
+.usuario_nuevo .rol_usuario {
+    width: 90%;
+    margin: auto;
+}
+
+.usuario_nuevo .rol_usuario select {
+    width: 100%;
+}
+
+.usuario_nuevo .btn_usuario {
+    width: 90%;
+    margin: auto;
+}
+
+.usuario_nuevo .btn_usuario input {
+    width: 100%;
+    background-color: rgb(31, 180, 31);
+    color: white;
+}
+
+.usuario_nuevo .btn_usuario input:hover {
+    background-color: rgb(77, 115, 219);
+}
