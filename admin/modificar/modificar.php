@@ -44,10 +44,10 @@ include_once('../../components/config/conection.php');
             <form action="modificar_ok.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="nombre_pais">
-                    <div class="form_modificar">
+                    <div class="nombre_form">
                         <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
                     </div>
-                    <div class="form_modificar">
+                    <div class="pais_form">
                         <input type="text" id="pais" name="pais" value="<?php echo $pais;?>">
                     </div>
                 </div>
@@ -67,11 +67,11 @@ include_once('../../components/config/conection.php');
                     <textarea name="descripcion" id="descripcion"><?php echo $descripcion;?></textarea>
                 </div>
                 <div class="precio_stock">
-                    <div>
+                    <div class="precio_form">
                         <label for="precio">Precio</label>
                         <input type="text" id="precio" name="precio" value="$<?php echo $precio;?>">
                     </div>
-                    <div>
+                    <div class="stock_form">
                         <label for="stock">Inventario</label>
                         <input type="text" id="stock" name="stock" value="<?php echo $stock;?>">
                     </div>

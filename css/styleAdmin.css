@@ -93,7 +93,7 @@
     margin: 10px 0px;
 }
 
-.agregar_producto .nombre_pais, 
+.agregar_producto .nombre_pais,
 .agregar_producto .precio_stock {
     display: flex;
     width: 90%;
@@ -101,10 +101,26 @@
     justify-content: space-between;
 }
 
-.agregar_producto .nombre_pais input, 
-.agregar_producto .precio_stock input {
-    width: 150px;
+.agregar_producto .nombre_pais .nombre_form,
+.agregar_producto .precio_stock .precio_form {
+    width: 50%;
+    margin-right: 10px;
 }
+
+.agregar_producto .nombre_pais .pais_form,
+.agregar_producto .precio_stock .stock_form {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.agregar_producto .nombre_pais .nombre_form input,
+.agregar_producto .nombre_pais .pais_form input,
+.agregar_producto .precio_stock .stock_form input,
+.agregar_producto .precio_stock .precio_form input {
+    width: 80%;
+}
+
+
 
 .agregar_producto .categoria_form {
     width: 90%;
