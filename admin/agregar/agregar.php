@@ -68,47 +68,41 @@ if($conection != NULL) {
                 }
             ?>
             <form action="agregar.php" method="post" enctype="multipart/form-data">
-                <div class="form_1">
+                <div class="nombre_pais">
                     <div class="nombre_form">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre">
+                        <input type="text" id="nombre" name="nombre" value="Nombre" onfocus="this.value=''">
                     </div>
                     <div class="pais_form">
-                        <label for="pais">Pais</label>
-                        <input type="text" id="pais" name="pais">
+                        <input type="text" id="pais" name="pais" value="Pais" onfocus="this.value=''">
                     </div>
                 </div>
-                    <div class="categoria_form">
-                        <label for="categoria">Categoria</label>
-
-                        <select name="categoria" id="categoria">
-                        <?php 
-                            $consulta_categoria = mysqli_query($conection,"SELECT * FROM categorias");
-                            while($seccion = mysqli_fetch_array($consulta_categoria)){
-                        ?>
-                            <option value="<?php echo $seccion['id_categoria'];?>"><?php echo $seccion['nombre_categoria'];?></option>
-                        <?php } ?>        
-                        </select>
-                    </div>
-                    <div class="descripcion_form">
-                        <label for="descripcion">Descripcion</label>
-                        <textarea name="descripcion" id="descripcion"></textarea>
-                    </div>
+                <div class="categoria_form">
+                    <select name="categoria" id="categoria">
+                        <option value="">Seleccione Categoria</option>
+                    <?php 
+                        $consulta_categoria = mysqli_query($conection,"SELECT * FROM categorias");
+                        while($seccion = mysqli_fetch_array($consulta_categoria)){
+                    ?>
+                        <option value="<?php echo $seccion['id_categoria'];?>"><?php echo $seccion['nombre_categoria'];?></option>
+                    <?php } ?>        
+                    </select>
+                </div>
+                <div class="descripcion_form">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="descripcion" id="descripcion"></textarea>
+                </div>
+                <div class="precio_stock">
                     <div class="precio_form">
-                        <label for="precio">Precio</label>
-                        <input type="number" id="precio" name="precio">
-                    </div>
-                <div class="form_1">
-                    <div class="img_form">
-                        <label for="img_producto">Imagen del Producto</label>
-                        <input type="file" accept="image/*" id="img_producto" name="img_producto">
+                        <input type="text" id="precio" name="precio" value="Precio" onfocus="this.value=''">
                     </div>
                     <div class="stock_form">
-                        <label for="stock">Inventario</label>
-                        <input type="number" id="stock" name="stock">
+                        <input type="text" id="stock" name="stock" value="Stock" onfocus="this.value=''">
                     </div>
+                </div>                
+                <div class="img_form">
+                    <label for="img_producto">Imagen del Producto</label>
+                    <input type="file" accept="image/*" id="img_producto" name="img_producto">
                 </div>
-
                 <div class="btn_form">
                     <input type="submit" value="Cargar" >
                 </div>

@@ -64,81 +64,105 @@
 
 .agregar_producto {
     background-color: rgb(79, 79, 79);
+    padding-bottom: 30px;
 }
 
 .agregar_producto h2 {
     text-align: center;
-    font-size: 2.5em;
-    padding: 30px 0px;
+    font-size: 2em;
+    letter-spacing: 3px;
 }
 
 .agregar_producto form {
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 30px;
+    width: 30%;
+    margin: 20px auto;
+    justify-content: center;
+    background-color: gray;
+    border: 1px solid #232223;
+    border-radius: 10px;
+    padding: 10px 0px;
 }
 
-.agregar_producto form label {
-    color: white;
+.agregar_producto form input, .agregar_producto form select {
+    background-color: azure;
+    height: 40px;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 20px;
+    margin: 10px 0px;
 }
 
-.agregar_producto form input {
-    border-radius: 20px;
-    height: 30px;
-    width: 200px;
-    padding: 0px 15px;
-}
-
-.form_1 {
+.agregar_producto .nombre_pais, 
+.agregar_producto .precio_stock {
     display: flex;
-    text-align: center;
-    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
 }
 
-.nombre_form, 
-.pais_form, 
-.categoria_form, 
-.descripcion_form, 
-.img_form, 
-.stock_form, 
-.precio_form {
+.agregar_producto .nombre_pais input, 
+.agregar_producto .precio_stock input {
+    width: 150px;
+}
+
+.agregar_producto .categoria_form {
+    width: 90%;
+    margin: auto;
+}
+
+.agregar_producto .categoria_form select {
+    width: 100%;
+}
+
+.agregar_producto .descripcion_form {
     display: flex;
     flex-direction: column;
-    margin: 20px;
-}
-
-.precio_form, .categoria_form {
-    align-items: center ;
-}
-
-.categoria_form select {
-    width: 150px;
+    width: 90%;
     margin: auto;
+}
+
+.agregar_producto .descripcion_form label,
+.agregar_producto .img_form label {
     text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
 }
 
-.descripcion_form textarea {
-    width: 60%;
+.agregar_producto .descripcion_form textarea {
+    background-color: azure;
     height: 100px;
-    margin: auto;
-    border-radius: 20px;
-    padding: 15px 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 1.4em;
 }
 
-.agregar_producto form .btn_form input {
-    width: 150px;
-    font-size: 1em;
-    font-weight: bold;
-    background-color: blueviolet;
+.agregar_producto .img_form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 0.9em;
+}
+
+.agregar_producto .img_form input {
+    background-color: gray;
+}
+
+.agregar_producto .btn_form {
+    width: 90%;
+    margin: auto;
+}
+
+.agregar_producto .btn_form input {
+    width: 100%;
+    background-color: rgb(31, 180, 31);
     color: white;
 }
 
-.agregar_producto form .btn_form input:hover {
-    background-color: rgb(99, 8, 185);
-    transition: background-color 0.8s ease;
+.agregar_producto .btn_form input:hover {
+    background-color: rgb(77, 115, 219);
 }
 
 /*Modificar Producto*/
@@ -161,6 +185,7 @@
 }
 
 .descripcion_modificar textarea {
+    background-color: azure;
     width: 300px;
     height: 100px;
     border-radius: 20px;
