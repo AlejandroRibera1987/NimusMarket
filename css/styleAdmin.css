@@ -136,6 +136,7 @@
     border-radius: 5px;
     margin-bottom: 5px;
     font-size: 1.4em;
+    padding-left: 10px;
 }
 
 .agregar_producto .img_form {
@@ -167,35 +168,13 @@
 
 /*Modificar Producto*/
 
-.form_modificar {
-    display: flex;
-    margin: 20px auto;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+.modificar_producto .img_form .img_modificar {
+    margin: auto;
 }
 
-.form_modificar label {
-    margin-right: 20px;
-}
-
-.descripcion_modificar {
-    display: flex;
-    flex-direction: column;
-}
-
-.descripcion_modificar textarea {
-    background-color: azure;
+.modificar_producto .img_form .img_modificar img {
     width: 300px;
-    height: 100px;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-.img_modificar img {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 /*Eliminar Producto*/

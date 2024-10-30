@@ -43,16 +43,15 @@ include_once('../../components/config/conection.php');
             <h2>Modificar Producto</h2>
             <form action="modificar_ok.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <div class="form_modificar">
-                    <label for="nombre">Producto</label>
-                    <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
+                <div class="nombre_pais">
+                    <div class="form_modificar">
+                        <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
+                    </div>
+                    <div class="form_modificar">
+                        <input type="text" id="pais" name="pais" value="<?php echo $pais;?>">
+                    </div>
                 </div>
-                <div class="form_modificar">
-                    <label for="pais">Pais</label>
-                    <input type="text" id="pais" name="pais" value="<?php echo $pais;?>">
-                </div>
-                <div class="form_modificar">
-                    <label for="categoria">Categoria</label>
+                <div class="categoria_form">
                     <select name="categoria" id="categoria">
                         <option value="<?php echo $id_categoria?>"><?php echo $categoria;?></option>
                         <?php 
@@ -63,19 +62,21 @@ include_once('../../components/config/conection.php');
                         <?php } ?>
                     </select>
                 </div>    
-                <div class="form_modificar descripcion_modificar">
+                <div class="descripcion_form">
                     <label for="descripcion">Descripcion</label>
                     <textarea name="descripcion" id="descripcion"><?php echo $descripcion;?></textarea>
                 </div>
-                <div class="form_modificar">
-                    <label for="precio">Precio</label>
-                    <input type="number" id="precio" name="precio" value="<?php echo $precio;?>">
+                <div class="precio_stock">
+                    <div>
+                        <label for="precio">Precio</label>
+                        <input type="text" id="precio" name="precio" value="$<?php echo $precio;?>">
+                    </div>
+                    <div>
+                        <label for="stock">Inventario</label>
+                        <input type="text" id="stock" name="stock" value="<?php echo $stock;?>">
+                    </div>
                 </div>
-                <div class="form_modificar">
-                    <label for="stock">Inventario</label>
-                    <input type="number" id="stock" name="stock" value="<?php echo $stock;?>">
-                </div>
-                <div class="form_modificar">
+                <div class="img_form">
                     <label for="img_producto">Imagen</label>
                     <div class="img_modificar">
                         <img src="../../img_db/<?php echo $img_producto;?>" alt="Imagen del Producto">
