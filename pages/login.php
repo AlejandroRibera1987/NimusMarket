@@ -2,6 +2,15 @@
 
 include_once('../components/header.php');
 
+$alerta = "";
+
+if(isset($_GET['log'])){
+    $alerta = "<p class='alerta_error'>El usuario no existe, Registrate</p>";
+}
+if(isset($_GET['pass'])){
+    $alerta = "<p class='alerta_error'>Contraseña o Usuario incorrecto</p>";
+}
+
 ?>
 
     <main>
@@ -10,7 +19,7 @@ include_once('../components/header.php');
             <figure>
                 <img src="../img/userlogin.png" alt="imagen Login">
             </figure>
-            <form action="login_ok.php" method="post">
+            <form action="../components/security/login_ok.php" method="post">
                 <div class="usuario">
                     <input type="text" id="usuario" name="usuario" value="Usuario" onfocus="this.value=''">
                 </div>
@@ -25,6 +34,7 @@ include_once('../components/header.php');
                     <p>Hace click <a href="">aqui!</a></p>
                 </div>
             </form>
+            <?php echo $alerta;?>
         </section>
     </main>
 
