@@ -277,8 +277,18 @@
     justify-content: space-between;
 }
 
+.usuario_nuevo .nombres_usuarios .nombre_usuario {
+    width: 50%;
+    margin-right: 10px;
+}
+
+.usuario_nuevo .nombres_usuarios .apellido_usuario {
+    width: 50%;
+    margin-left: 10px;
+}
+
 .usuario_nuevo .nombres_usuarios input {
-    width: 150px;
+    width: 80%;
 }
 
 .usuario_nuevo .correo_usuario,
