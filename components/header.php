@@ -17,7 +17,7 @@
     <header>
         <div class="logo">
             <figure>
-                <a href="/NimusMakert/index.php"><img src="/NimusMarket/img/logo.png" alt="Logo de numisMarket"></a>
+                <a href="/NimusMarket/index.php"><img src="/NimusMarket/img/logo.png" alt="Logo de numisMarket"></a>
             </figure>
         </div>
         <div class="menu">
