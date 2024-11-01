@@ -36,11 +36,21 @@ if($conection != NULL) {
                     echo"<p class='alerta_ok'>Se a modificado el producto Correctamente</p>";
                 }
                 if(isset($_GET['modificacionno'])){
-                    echo"<p class='alerta_error'>Se a asdadasdasda el producto Correctamente</p>";
+                    echo"<p class='alerta_error'>Ocurrio un error</p>";
                 }
                 if(isset($_GET['Eliminar'])){
                     echo"<p class='alerta_error'>Se elimino el producto Correctamente</p>";
                 }
+                if(isset($_GET['ok'])){
+                    echo "
+                        <p class='alerta_ok'>Se Actualizo Correctamente</p>
+                    ";
+                }
+                if(isset($_GET['mail'])){
+                    echo "
+                        <p class='alerta_error'>El Mail ya Existe</p>
+                    ";
+                } 
             ?>
             <h2>Productos</h2>
             <table>
@@ -108,7 +118,7 @@ if($conection != NULL) {
                             <td>$dato[correo]</td>
                             <td>$dato[nombre_rol]</td>
                             <td>
-                                <a href='modificar/modificar.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
+                                <a href='modificar/modificar_usuario.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
                                 <a href='eliminar/eliminar.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
                             </td>
                         <tr>

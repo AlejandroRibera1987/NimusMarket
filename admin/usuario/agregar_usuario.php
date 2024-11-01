@@ -7,11 +7,11 @@ include_once('../../components/config/conection.php');
 
     <main>
         <div class="usuario_nuevo">
-        <div class="menu_admin">
-            <ul>
-                <li class="btn_primary"><a href="../index.php">Volver</a></li>
-            </ul>
-        </div>
+            <div class="menu_admin">
+                <ul>
+                    <li class="btn_primary"><a href="../index.php">Volver</a></li>
+                </ul>
+            </div>
             <h2>Alta de Usuario</h2>
             <?php
                 if(isset($_GET['pass'])){

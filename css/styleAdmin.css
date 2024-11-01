@@ -194,6 +194,17 @@
     border-radius: 10px;
 }
 
+/*Modificar Usuario*/
+
+.modificar_producto form .correo {
+    width: 90%;
+    margin: auto;
+}
+
+.modificar_producto form .correo input {
+    width: 90%;
+}
+
 /*Eliminar Producto*/
 
 .cards_eliminacion {

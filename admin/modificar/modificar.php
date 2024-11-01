@@ -36,7 +36,7 @@ include_once('../../components/config/conection.php');
     <main>
         <div class="menu_admin">
             <ul>
-                <li class="btn_primary"><a href="../index.php">Ver Producto</a></li>
+                <li class="btn_primary"><a href="../index.php">Volver</a></li>
             </ul>
         </div>
         <div class="agregar_producto modificar_producto">

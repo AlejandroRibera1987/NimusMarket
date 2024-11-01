@@ -4,7 +4,7 @@
     }
    // var_dump($_SESSION);
     $rol = isset($_SESSION['fk_rol']) ? $_SESSION['fk_rol'] : null;
-
+    $nombre = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
                                     <figure>
                                         <img src='/NimusMarket/img/user.png' alt='Contacto'>
                                     </figure>
-                                    <a href='/NimusMarket/components/security/logout.php'>Cerrar Sesión</a>
+                                    <a href='/NimusMarket/components/security/logout.php'>Cerrar Sesión<br>$nombre</a>
                                 </li>
                             ";
 
