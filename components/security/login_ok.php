@@ -20,7 +20,7 @@ if($conection != NULL){
         $dato = mysqli_fetch_array($resultado);
 
         if($dato == NULL){
-           header('Location: ../../pages/login.php?log=no');
+            header('Location: ../../pages/login.php?log=no');
         }
 
         $consulta_dos = "SELECT * FROM usuarios WHERE correo='$usuario' AND clave=MD5('$clave')";

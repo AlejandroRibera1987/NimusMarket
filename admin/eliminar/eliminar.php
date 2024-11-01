@@ -14,7 +14,6 @@ include_once('../../components/config/conection.php');
 
             $dato = mysqli_fetch_array($resultado);
 
-           
             $nombre = $dato['nombre_producto'];
             $descripcion = $dato['descripcion_producto'];
             $img_producto = $dato['img_producto'];

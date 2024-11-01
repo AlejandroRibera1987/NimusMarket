@@ -38,19 +38,30 @@ if($conection != NULL) {
                 if(isset($_GET['modificacionno'])){
                     echo"<p class='alerta_error'>Ocurrio un error</p>";
                 }
-                if(isset($_GET['Eliminar'])){
-                    echo"<p class='alerta_error'>Se elimino el producto Correctamente</p>";
+                if(isset($_GET['eliminarproducto'])){
+                    echo"<p class='alerta_ok'>Se elimino el producto Correctamente</p>";
                 }
                 if(isset($_GET['ok'])){
                     echo "
-                        <p class='alerta_ok'>Se Actualizo Correctamente</p>
+                        <p class='alerta_ok'>Se Actualizo Usuario Correctamente</p>
                     ";
+                }
+                if(isset($_GET['usuariook'])){
+                    echo "
+                        <p class='alerta_ok'>Se ingreso el Usuario Correctamente</p>
+                    ";
+                }
+                if(isset($_GET['eliminarusuario'])){
+                    echo"<p class='alerta_ok'>Se elimino el Usuario Correctamente</p>";
                 }
                 if(isset($_GET['mail'])){
                     echo "
                         <p class='alerta_error'>El Mail ya Existe</p>
                     ";
                 } 
+                if(isset($_GET['productook'])){
+                    echo"<p class='alerta_ok'>Se a cargado el producto Correctamente</p>";
+                }
             ?>
             <h2>Productos</h2>
             <table>
@@ -119,7 +130,7 @@ if($conection != NULL) {
                             <td>$dato[nombre_rol]</td>
                             <td>
                                 <a href='modificar/modificar_usuario.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
-                                <a href='eliminar/eliminar.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
+                                <a href='eliminar/eliminar_usuario.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
                             </td>
                         <tr>
                         ";

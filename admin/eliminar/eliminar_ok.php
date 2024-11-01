@@ -14,7 +14,7 @@ if($conection != NULL){
 
         mysqli_query ($conection,$consulta);
 
-        header("Location: ../index.php?eliminar=ok");
+        header("Location: ../index.php?eliminarproducto=ok");
     }
 }
 

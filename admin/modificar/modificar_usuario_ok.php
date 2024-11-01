@@ -21,13 +21,13 @@ include_once('../../components/config/conection.php');
 
 
             $consulta_usuario = "SELECT * FROM `usuarios`
-                                                 WHERE (nombre = '$nombre' AND id_usuario != '$id')
-                                                 OR (correo = '$correo' AND id_usuario != '$id')";
+                                                WHERE (nombre = '$nombre' AND id_usuario != '$id')
+                                                OR (correo = '$correo' AND id_usuario != '$id')";
 
             $resultado_usuario = mysqli_query($conection, $consulta_usuario);
 
             if(mysqli_fetch_array($resultado_usuario) > 0){
-                header('Location: ../index.php?mail=no');
+                header('Location: modificar_usuario.php?error=no&id='.$id);
             }else{
                 if(empty($_POST['clave'])){
                     $actualizar_usuario = mysqli_query($conection, "UPDATE `usuarios` SET `nombre`='$nombre',`apellido`='$apellido',`correo`='$correo',`fk_rol`='$rol' WHERE id_usuario = '$id'");

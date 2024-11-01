@@ -40,7 +40,7 @@ if($conection != NULL) {
 
         mysqli_query($conection, $consulta);
 
-        header('Location: agregar.php?ok=ok');
+        header('Location: ../index.php?productook=ok');
     }else{
         //header('Location: ../index.php?no=ok');
     }
@@ -59,14 +59,6 @@ if($conection != NULL) {
 
         <div class="agregar_producto">
             <h2>Agregar Producto</h2>
-            <?php
-                if(isset($_GET['ok'])){
-                    echo"<p class='alerta_ok'>Se a cargado el producto Correctamente</p>";
-                }
-                if(isset($_GET['no'])){
-                    echo"<p class='alerta_error'>No se cargo el producto Correctamente</p>";
-                }
-            ?>
             <form action="agregar.php" method="post" enctype="multipart/form-data">
                 <div class="nombre_pais">
                     <div class="nombre_form">

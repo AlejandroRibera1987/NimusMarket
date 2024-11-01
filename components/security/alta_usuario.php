@@ -31,7 +31,7 @@ if($conection != NULL) {
             }else {
                 $insertar = "INSERT INTO `usuarios`(`nombre`, `apellido`, `correo`, `clave`, `fk_rol`) VALUES ('$nombre','$apellido','$correo',MD5('$clave1'),'$rol')";
                 mysqli_query($conection,$insertar);
-                header('Location: ../../admin/usuario/agregar_usuario.php?ok=ok');
+                header('Location: ../../admin/index.php?usuariook=ok');
             }
 
         }else{

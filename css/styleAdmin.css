@@ -264,6 +264,12 @@
     transition: background-color 0.8s ease;
 }
 
+/*Eliminar Usuario*/
+
+.cards_eliminacion .correo_usuario  {
+    margin-bottom: 40px;
+}
+
 /*Agregar Usuario*/
 
 .usuario_nuevo {
