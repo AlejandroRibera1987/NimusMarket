@@ -1,5 +1,5 @@
 <?php
-
+include_once('../../components/security/admin.php');
 include_once('../../components/header.php');
 include_once('../../components/config/conection.php');
 

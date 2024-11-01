@@ -1,3 +1,12 @@
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+   // var_dump($_SESSION);
+    $rol = isset($_SESSION['fk_rol']) ? $_SESSION['fk_rol'] : null;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +34,31 @@
                 <ul>
                     <li><a href="/NimusMarket/pages/productos.php">Productos</a></li>
                     <li><a href="">Ofertas</a></li>
-                    <li><a href="">Contáctenos</a></li>
-                    <li class="link_usuario">
-                        <figure>
-                            <img src="/NimusMarket/img/user.png" alt="Contacto">
-                        </figure>
-                        <a href="/NimusMarket/admin/index.php">Entrar</a>
-                    </li>
+                    <?php
+                        if($rol == 1){
+                            echo "<li><a href='/NimusMarket/admin/index.php'>Administración</a></li>";
+                        }
+                        if($rol == 1 OR $rol == 2){
+                            echo "
+                                <li class='link_usuario'>
+                                    <figure>
+                                        <img src='/NimusMarket/img/user.png' alt='Contacto'>
+                                    </figure>
+                                    <a href='/NimusMarket/components/security/logout.php'>Cerrar Sesión</a>
+                                </li>
+                            ";
+
+                        }else{
+                            echo"
+                                <li class='link_usuario'>
+                                    <figure>
+                                        <img src='/NimusMarket/img/user.png' alt='Contacto'>
+                                    </figure>
+                                    <a href='/NimusMarket/pages/login.php'>Entrar</a>
+                                </li>
+                            ";
+                        }
+                    ?>
                     <li>
                         <figure>
                             <img src="/NimusMarket/img/carrito.png" alt="Carrito de compras">

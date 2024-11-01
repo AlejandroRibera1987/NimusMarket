@@ -1,17 +1,23 @@
 <?php
 
+include_once('../components/security/admin.php');
 include_once('../components/header.php');
 include_once('../components/config/conection.php');
 
 if($conection != NULL) {
 
-    $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.    precio, p.stock, p.img_producto
+    $consulta = "SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, c.nombre_categoria, p.pais, p.precio, p.stock, p.img_producto
                 FROM productos p
                 INNER JOIN categorias c ON p.fk_categoria = c.id_categoria";
 
     $resultado = mysqli_query ($conection,$consulta);
 
-    
+    $consulta_usuario = "SELECT u.id_usuario, u.nombre, u.apellido, u.correo, r.nombre_rol
+
+                FROM usuarios u
+                INNER JOIN roles r ON u.fk_rol = r.id_rol";
+
+    $resultado_usuario = mysqli_query($conection, $consulta_usuario);
 }
 
 ?>
@@ -21,7 +27,6 @@ if($conection != NULL) {
             <ul>
                 <li class="btn_primary"><a href="agregar/agregar.php">Agregar Producto</a></li>
                 <li class="btn_primary"><a href="usuario/agregar_usuario.php">Agregar Usuario</a></li>
-                <li class="btn_primary"><a href="">Categorias</a></li>
             </ul>
         </div>
         
@@ -79,6 +84,42 @@ if($conection != NULL) {
                 </tbody>
             </table>
         </div>
+        <div class="tabla_productos">
+                <h2>Usuarios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Tipo Usuario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>                    
+                        <?php
+                            while($dato = mysqli_fetch_array($resultado_usuario)) {
+                        echo "
+                        <tr>
+                            <td>$dato[id_usuario]</td>
+                            <td>$dato[nombre]</td>
+                            <td>$dato[apellido]</td>
+                            <td>$dato[correo]</td>
+                            <td>$dato[nombre_rol]</td>
+                            <td>
+                                <a href='modificar/modificar.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/modificar.png' alt='' class='img_acciones'></a>
+                                <a href='eliminar/eliminar.php?id=$dato[id_usuario]' class='tabla_acciones'><img src='../img/eliminar.png' alt='' class='img_acciones'></a>
+                            </td>
+                        <tr>
+                        ";
+                                
+                            } 
+                        ?>                    
+                    </tbody>
+                </table>
+            </div>
+        
     </main>
 
 

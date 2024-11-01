@@ -58,6 +58,7 @@
 .tabla_productos table td {
     border: 1px solid white;
     text-align: center;
+    padding: 10px 0px;
 }
 
 /*Agragar Producto*/

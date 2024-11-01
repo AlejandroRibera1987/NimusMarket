@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once('../../components/config/conection.php');
 
 
@@ -30,7 +30,16 @@ if($conection != NULL){
         if($datos_dos == NULL){
             header('Location: ../../pages/login.php?pass=no');
         }else{
-            header('Location: ../../admin/index.php');
+
+            if($datos_dos['fk_rol'] == 1){
+
+                $_SESSION = $datos_dos; 
+                header('Location: ../../admin/index.php');
+            }else{
+                $_SESSION = $datos_dos; 
+                header('Location: ../../index.php');
+            }
+
         }
 
     }
