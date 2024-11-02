@@ -52,6 +52,8 @@ if($conection != NULL){
                                 <p><?php echo $categoria;?></p>
                                 <p>$<?php echo $precio;?></p>
                             </div>
+                        <form action="../components/security/agregar_carrito.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
                             <div class="cantidad">
                                 <label for="cantidad">Cantidad</label>
                                 <select name="cantidad" id="cantidad">
@@ -66,12 +68,12 @@ if($conection != NULL){
                                 </select>
                                 
                             </div>
-                        </div>
                         <br><br>
-                        <div class="btn_moneda">
-                            <a href="productos.php">Volver</a>
-                            <a href="">Agregar</a>
-                        </div>
+                            <div class="btn_moneda">
+                                <a href="productos.php">Volver</a>
+                                <input type="submit" value="Agregar">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
