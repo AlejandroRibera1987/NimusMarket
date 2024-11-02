@@ -16,8 +16,12 @@
 
         $resultado = mysqli_query($conection, $consulta);
 
-        $dato = mysqli_fetch_array($resultado);
-
+        $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito";
+        $resultado_consulta_total = mysqli_query($conection, $consulta_total);
+        $total_fila = mysqli_fetch_assoc($resultado_consulta_total);
+        $total_precio = $total_fila['precio_total'];
+        $costo_envio = 100;
+        $total_final = $total_precio + $costo_envio;
     }
 
 
@@ -31,40 +35,65 @@
                 <li class="btn_primary"><a href="usuario/agregar_usuario.php">A Cambiar</a></li>
             </ul>
         </div>
-        <div class="carrito_compras">
-            <div class="cards_carrito">
-                <div class="img_carrito">
-                    <figure>
-                        <img src="../img_db/EstadosUnidos.webp.jpg" alt="Moneda del carrito">
-                    </figure>
-                </div>
-                <div class="nombre_carrito">
-                    <p>Nombre de la moneda del carritos</p>
-                </div>
-                <div class="cantidad_carrito">
-                    <p>25 Un.</p>
-                </div>
-                <div class="precio_carrito">
-                    <p>$250</p>
-                </div>
-            </div>
+        <div class="container_carrito">
+            <div class="carrito_compras">
+                <div class="articulos_carrito">
 
-            <div class="cards_descripcion_carrito">
-                <h2>Resumen de compra</h2>
-                <div class="productos_totales">
-                    <p>Productos totales</p>
-                    <p>$2500</p>
+                    <?php
+                        while($fila = mysqli_fetch_array($resultado)){
+                            echo "
+                                    <div class='cards_carrito'>
+                                    <div class='img_carrito'>
+                                        <figure>
+                                            <img src='../img_db/$fila[carrito_img]' alt='Moneda del carrito'>
+                                        </figure>
+                                    </div>
+                                    <div class='nombre_carrito'>
+                                        <p>$fila[carrito_nombre]</p>
+                                        <div class='opciones_carrito'>
+                                            <ul>
+                                                <li><a href=''>Eliminar</a></li>
+                                                <li><a href=''>Eliminar</a></li>
+                                                <li><a href=''>Eliminar</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class='cantidad_carrito'>
+                                        <p>$fila[carrito_cantidad] Un.</p>
+                                    </div>
+                                    <div class='precio_carrito'>
+                                        <p>$ $fila[carrito_precio]</p>
+                                    </div>                   
+                                </div>
+                            
+                            ";
+                        }
+                    ?>
                 </div>
-                <div class="envio_carrito">
-                    <p>Envío</p>
-                    <p>$100</p>
-                </div>
-                <div class="total_carrito">
-                    <p>Total</p>
-                    <p>$2600</p>
-                </div>
-                <div class="btn_carrito">
-                    <a href="">Terminar Compra</a>
+                
+    
+                <div class="cards_descripcion_carrito">
+                    <h2>Resumen de compra</h2>
+                    <div class="productos_totales">
+                        <p>Productos</p>
+                        <p>$<?php echo number_format($total_precio, 2); ?></p>
+                    </div>
+                    <div class="envio_carrito">
+                        <p>Envío</p>
+                        <p>$<?php echo $costo_envio;?></p>
+                    </div>
+                    <div class="descuento_carrito">
+                        <a href="">Ingrese código de cupón</a>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="total_carrito">
+                        <p>Total</p>
+                        <p>$<?php echo $total_final;?></p>
+                    </div>
+                    <div class="btn_carrito">
+                        <a href="">Terminar Compra</a>
+                    </div>
                 </div>
             </div>
         </div>
