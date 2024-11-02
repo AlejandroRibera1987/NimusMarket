@@ -61,7 +61,9 @@
                     ?>
                     <li>
                         <figure>
-                            <img src="/NimusMarket/img/carrito.png" alt="Carrito de compras">
+                            <a href="/NimusMarket/pages/carritocompras.php">
+                                <img src="/NimusMarket/img/carrito.png" alt="Carrito de compras">
+                            </a>
                         </figure>
                     </li>
                 </ul>

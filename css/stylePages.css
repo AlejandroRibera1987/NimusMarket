@@ -162,6 +162,26 @@
     background-color: #8858ed;
 }
 
+.moneda_individual .datos_monedas .descripcion_moneda .cantidad  {
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.moneda_individual .datos_monedas .descripcion_moneda .cantidad label {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.moneda_individual .datos_monedas .descripcion_moneda .cantidad select {
+    font-size: 1.3em;
+    width: 50px;
+    margin: auto;
+}
+
 /*Categorias Inididuales*/
 
 .productos .titulo_categorias {

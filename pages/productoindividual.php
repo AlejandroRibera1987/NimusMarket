@@ -52,7 +52,22 @@ if($conection != NULL){
                                 <p><?php echo $categoria;?></p>
                                 <p>$<?php echo $precio;?></p>
                             </div>
+                            <div class="cantidad">
+                                <label for="cantidad">Cantidad</label>
+                                <select name="cantidad" id="cantidad">
+                                    <?php
+                                        for ($i=1; $i <= $stock; $i++) { 
+                                            echo "
+                                                <option value=$i>$i</option>
+                                            ";
+                                        }
+                                    ?>
+
+                                </select>
+                                
+                            </div>
                         </div>
+                        <br><br>
                         <div class="btn_moneda">
                             <a href="productos.php">Volver</a>
                             <a href="">Agregar</a>
