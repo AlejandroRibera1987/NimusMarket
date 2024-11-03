@@ -149,13 +149,26 @@
     width: 50%;
     margin: auto;
     text-align: center;
+    display: flex;
 }
 
-.moneda_individual .datos_monedas .btn_moneda a {
+.moneda_individual .datos_monedas .btn_moneda a,
+.moneda_individual .datos_monedas .btn_moneda input {
     background-color: blueviolet;
     margin: 0px 20px;
     padding: 5px 20px;
     border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    border: none;
+}
+
+.moneda_individual .datos_monedas .btn_moneda input {
+    background-color: rgb(31, 180, 31);
+}
+
+.moneda_individual .datos_monedas .btn_moneda input:hover {
+    background-color: rgb(77, 115, 219);
 }
 
 .moneda_individual .datos_monedas .btn_moneda a:hover {
@@ -226,7 +239,6 @@
 .login form .usuario,
 .login form .clave,
 .login form .btn_login {
-    background-color: red;
     width: 90%;
     margin: auto;
     margin: 20px;
@@ -332,7 +344,7 @@
     padding: 10px 20px;
     margin-left: 50px;
     border-radius: 20px;
-    height: 270px;
+    height: 270px; 
 }
 
 .carrito_compras .cards_descripcion_carrito h2 {

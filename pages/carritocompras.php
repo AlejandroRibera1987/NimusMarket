@@ -16,6 +16,8 @@
 
         $resultado = mysqli_query($conection, $consulta);
 
+        
+
         $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito";
         $resultado_consulta_total = mysqli_query($conection, $consulta_total);
         $total_fila = mysqli_fetch_assoc($resultado_consulta_total);
@@ -37,24 +39,25 @@
         </div>
         <div class="container_carrito">
             <div class="carrito_compras">
+                
                 <div class="articulos_carrito">
-
                     <?php
                         while($fila = mysqli_fetch_array($resultado)){
                             echo "
-                                    <div class='cards_carrito'>
-                                    <div class='img_carrito'>
-                                        <figure>
-                                            <img src='../img_db/$fila[carrito_img]' alt='Moneda del carrito'>
-                                        </figure>
-                                    </div>
+                                
+                                <div class='cards_carrito'>
+                                        <div class='img_carrito'>
+                                            <figure>
+                                                <img src='../img_db/$fila[carrito_img]' alt='Moneda del carrito'>
+                                            </figure>
+                                        </div>
                                     <div class='nombre_carrito'>
                                         <p>$fila[carrito_nombre]</p>
                                         <div class='opciones_carrito'>
                                             <ul>
-                                                <li><a href=''>Eliminar</a></li>
-                                                <li><a href=''>Eliminar</a></li>
-                                                <li><a href=''>Eliminar</a></li>
+                                                <li><a href='../components/security/eliminar_prod_carrito.php?id=$fila[fk_producto]'>Eliminar</a></li>
+                                                <li><a href=''>Guardar</a></li>
+                                                <li><a href=''>Comprar ahora</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -92,7 +95,7 @@
                         <p>$<?php echo $total_final;?></p>
                     </div>
                     <div class="btn_carrito">
-                        <a href="">Terminar Compra</a>
+                        <a href="../components/security/compraterminada.php?id=<?php echo $dato['id_carrito'];?>">Terminar Compra</a>
                     </div>
                 </div>
             </div>

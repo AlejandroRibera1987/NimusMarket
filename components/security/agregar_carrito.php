@@ -14,11 +14,12 @@
             $resultado = mysqli_query($conection, $consulta);
 
             $dato = mysqli_fetch_assoc($resultado);
+            
             $nombre = $dato['nombre_producto'];
             $precio = $dato['precio'];
             $img_producto = $dato['img_producto'];
 
-            $agregar_carrito = "INSERT INTO `carrito`(`carrito_nombre`, `carrito_cantidad`, `carrito_precio`, `carrito_img`) VALUES ('$nombre','$cantidad','$precio','$img_producto')";
+            $agregar_carrito = "INSERT INTO `carrito`(`carrito_nombre`, `carrito_cantidad`, `carrito_precio`, `carrito_img`, `fk_producto`) VALUES ('$nombre','$cantidad','$precio','$img_producto','$id')";
 
             $insertar_carrito = mysqli_query($conection, $agregar_carrito);
 
