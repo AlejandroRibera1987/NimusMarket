@@ -83,7 +83,7 @@
                     </div>
                     <div class="envio_carrito">
                         <p>Envío</p>
-                        <p>$<?php echo $costo_envio;?></p>
+                        <p>$<?php echo number_format($costo_envio, 2);?></p>
                     </div>
                     <div class="descuento_carrito">
                         <a href="">Ingrese código de cupón</a>
@@ -92,7 +92,7 @@
                     <hr>
                     <div class="total_carrito">
                         <p>Total</p>
-                        <p>$<?php echo $total_final;?></p>
+                        <p>$<?php echo number_format($total_final, 2);?></p>
                     </div>
                     <div class="btn_carrito">
                         <a href="../components/security/compraterminada.php?id=<?php echo $dato['id_carrito'];?>">Terminar Compra</a>
