@@ -12,7 +12,9 @@
 
     if($conection != NULL){
 
-        $consulta = "SELECT * FROM `carrito`";
+        $id_usuario = $_SESSION['id_usuario'];
+
+        $consulta = "SELECT * FROM `carrito` where fk_usuario = '$id_usuario'";
 
         $resultado = mysqli_query($conection, $consulta);
 
