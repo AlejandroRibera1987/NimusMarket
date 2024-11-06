@@ -20,7 +20,7 @@
 
         
 
-        $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito";
+        $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito WHERE fk_usuario = '$id_usuario'";
         $resultado_consulta_total = mysqli_query($conection, $consulta_total);
         $total_fila = mysqli_fetch_assoc($resultado_consulta_total);
         $total_precio = $total_fila['precio_total'];
