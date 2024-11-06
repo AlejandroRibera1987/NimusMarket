@@ -12,13 +12,15 @@
 
     if($conection != NULL){
 
-        $consulta = "SELECT * FROM `carrito`";
+        $id_usuario = $_SESSION['id_usuario'];
+
+        $consulta = "SELECT * FROM `carrito` where fk_usuario = '$id_usuario'";
 
         $resultado = mysqli_query($conection, $consulta);
 
         
 
-        $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito";
+        $consulta_total = "Select SUM(carrito_precio * carrito_cantidad) AS precio_total FROM carrito WHERE fk_usuario = '$id_usuario'";
         $resultado_consulta_total = mysqli_query($conection, $consulta_total);
         $total_fila = mysqli_fetch_assoc($resultado_consulta_total);
         $total_precio = $total_fila['precio_total'];
@@ -83,7 +85,7 @@
                     </div>
                     <div class="envio_carrito">
                         <p>Envío</p>
-                        <p>$<?php echo $costo_envio;?></p>
+                        <p>$<?php echo number_format($costo_envio, 2);?></p>
                     </div>
                     <div class="descuento_carrito">
                         <a href="">Ingrese código de cupón</a>
@@ -92,7 +94,7 @@
                     <hr>
                     <div class="total_carrito">
                         <p>Total</p>
-                        <p>$<?php echo $total_final;?></p>
+                        <p>$<?php echo number_format($total_final, 2);?></p>
                     </div>
                     <div class="btn_carrito">
                         <a href="../components/security/compraterminada.php?id=<?php echo $dato['id_carrito'];?>">Terminar Compra</a>

@@ -31,7 +31,7 @@ if(isset($_GET['pass'])){
                 </div>
                 <div class="registrate">
                     <p>No te has registrado</p>
-                    <p>Hace click <a href="">aqui!</a></p>
+                    <p>Hace click <a href="registrousuario.php">aqui!</a></p>
                 </div>
             </form>
             <?php echo $alerta;?>
