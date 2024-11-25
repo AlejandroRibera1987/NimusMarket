@@ -2,7 +2,7 @@
     <div class="footer1">
         <div class="imgfooter">
             <figure>
-                <img src="../img/logofooter.png" alt="Logo de Footer">
+                <img src="../../img/logofooter.png" alt="Logo de Footer">
             </figure>
         </div>
         <div class="menuFooter">
@@ -39,21 +39,21 @@
             <h2>Metodos de pago</h2>
             <div class="imgpagos">
                 <ul>
-                    <li><img src="../img/visa.webp" alt="Visa"></li>
-                    <li><img src="../img/Master Card.webp" alt="Mastercard"></li>
-                    <li><img src="../img/American Express.webp" alt="Master"></li>
-                    <li><img src="../img/Diners.webp" alt="Dinners"></li>
-                    <li><img src="../img/PayPal.webp" alt="PayPal"></li>
+                    <li><img src="../../img/visa.webp" alt="Visa"></li>
+                    <li><img src="../../img/Master Card.webp" alt="Mastercard"></li>
+                    <li><img src="../../img/American Express.webp" alt="Master"></li>
+                    <li><img src="../../img/Diners.webp" alt="Dinners"></li>
+                    <li><img src="../../img/PayPal.webp" alt="PayPal"></li>
                 </ul>
             </div>
         </div>
         <div class="redesFooter">
             <h2>Unite a la comunidad</h2>
             <ul>
-                <li><a href=""><img src="../img/facebook.png" alt="Facebook"></a></li>
-                <li><a href=""><img src="../img/instagram.png" alt="Instagram"></a></li>
-                <li><a href=""><img src="../img/youtube.png" alt="Youtube"></a></li>
-                <li><a href=""><img src="../img/tik-tok.png" alt="TikTok"></a></li>
+                <li><a href=""><img src="../../img/facebook.png" alt="Facebook"></a></li>
+                <li><a href=""><img src="../../img/instagram.png" alt="Instagram"></a></li>
+                <li><a href=""><img src="../../img/youtube.png" alt="Youtube"></a></li>
+                <li><a href=""><img src="../../img/tik-tok.png" alt="TikTok"></a></li>
             </ul>
         </div>
     </div>
