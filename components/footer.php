@@ -39,7 +39,7 @@
             <h2>Metodos de pago</h2>
             <div class="imgpagos">
                 <ul>
-                    <li><img src="../../img/visa.webp" alt="Visa"></li>
+                    <li><img src="../../img/Visa.webp" alt="Visa"></li>
                     <li><img src="../../img/Master Card.webp" alt="Mastercard"></li>
                     <li><img src="../../img/American Express.webp" alt="Master"></li>
                     <li><img src="../../img/Diners.webp" alt="Dinners"></li>
