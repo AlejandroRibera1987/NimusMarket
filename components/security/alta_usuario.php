@@ -39,11 +39,6 @@ if($conection != NULL) {
         }
 
     }
-
-
-
-
-
 }
 
 ?>
